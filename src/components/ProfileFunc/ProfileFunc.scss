@@ -1,0 +1,32 @@
+.main-cont{
+	@apply flex justify-between items-center relative;
+}
+.right{
+	@apply w-[440px] ml-10;
+}
+.right-sup{
+	@apply w-[440px] ml-10 grid grid-cols-1 gap-2;
+}
+.prof{
+	@apply flex flex-col gap-4 items-center;
+}
+
+
+@media (max-width:700px) {
+	.main-cont{
+		@apply flex-col items-center justify-center flex  relative;
+	}
+	.right{
+		@apply w-[300px] ml-0;
+	}
+	.right-sup{
+		@apply w-[300px] grid grid-cols-1 gap-2 ml-0;
+	}
+	.prof{
+		@apply flex flex-col gap-1 items-center mb-6 ;
+	}
+	.logout{
+		@apply absolute z-20 top-0 right-0 w-min
+	}
+	
+}

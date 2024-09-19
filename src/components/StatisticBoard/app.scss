@@ -1,0 +1,114 @@
+@keyframes gradient-green {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes gradient-yellow {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes gradient-red {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.animate-gradient-green {
+	background: linear-gradient(270deg, #34d399, #10b981, #6ee7b7);
+	background-size: 400% 400%;
+	animation: gradient-green 8s ease infinite;
+}
+
+.animate-gradient-yellow {
+	background: linear-gradient(270deg, #fbbf24, #f59e0b, #fcd34d);
+	background-size: 400% 400%;
+	animation: gradient-yellow 8s ease infinite;
+}
+
+.animate-gradient-red {
+	background: linear-gradient(270deg, #f87171, #ef4444, #fecaca);
+	background-size: 400% 400%;
+	animation: gradient-red 8s ease infinite;
+}
+
+@keyframes gradientFill {
+	0% {
+		fill: #34d399;
+	}
+	25% {
+		fill: #60a5fa;
+	}
+	50% {
+		fill: #fbbf24;
+	}
+	75% {
+		fill: #f87171;
+	}
+	100% {
+		fill: #34d399;
+	}
+}
+
+.gradientProfile svg {
+	animation: gradientFill 8s ease infinite;
+}
+
+.main-block {
+	@apply text-xl mt-8;
+}
+.h2 {
+	@apply text-4xl font-semibold mb-1;
+}
+.line {
+	@apply text-sm flex justify-end m-1 mt-1;
+}
+.www {
+	@apply w-full bg-gray-200 rounded-full h-4 overflow-hidden;
+}
+.bloack {
+	@apply flex justify-between items-center mb-2;
+}
+.rrr {
+	@apply text-2xl;
+}
+@media (max-width: 570px) {
+	.main-block {
+		@apply text-xl mt-8  w-full;
+	}
+	.h2 {
+		@apply text-4xl font-semibold mb-1;
+	}
+	.line {
+		@apply text-sm flex justify-end m-1 mt-1;
+	}
+	.www {
+		@apply w-full bg-gray-200 rounded-full h-4 overflow-hidden;
+	}
+	.bloack {
+		@apply flex justify-between items-center mb-2;
+	}
+	.rrr {
+		@apply text-2xl;
+	}
+}

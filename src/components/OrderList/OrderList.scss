@@ -1,0 +1,86 @@
+.modal {
+	position: relative;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+  }
+  
+  /* Десктопная версия */
+  @media (min-width: 769px) {
+	.modal-desktop {
+	  width: 70%;
+	  height: 100vh;
+	}
+	
+	.modal-slide-enter {
+	  animation: slideInDesktop 0.3s forwards;
+	}
+  
+	.modal-slide-exit {
+	  animation: slideOutDesktop 0.3s forwards;
+	}
+  
+	@keyframes slideInDesktop {
+	  from {
+		transform: translateX(100%);
+	  }
+	  to {
+		transform: translateX(0);
+	  }
+	}
+  
+	@keyframes slideOutDesktop {
+	  from {
+		transform: translateX(0);
+	  }
+	  to {
+		transform: translateX(100%);
+	  }
+	}
+  }
+  
+  /* Мобильная версия */
+//   @media (max-width: 500px) {
+// 	ul{
+// 		@apply flex-col;
+// 	}
+//   }
+  @media (max-width: 768px) {
+	.modal-mobile {
+	  width: 100%;
+	  transform: translateY(100%);
+	  bottom: 0;
+	  border-top-left-radius: 16px;
+	  border-top-right-radius: 16px;
+	  transition: transform 0.3s ease-in-out;
+	  touch-action: none;
+	}
+	
+	/* Анимация появления для мобильных */
+	.modal-slide-enter {
+	  transform: translateY(100%);
+	}
+	.modal-slide-enter-active {
+	  transform: translateY(0);
+	  transition: transform 0.3s ease-in-out;
+	}
+  
+	/* Анимация закрытия для мобильных */
+	.modal-slide-exit {
+	  transform: translateY(0);
+	}
+	.modal-slide-exit-active {
+	  transform: translateY(100%); /* Закрытие вверх */
+	  transition: transform 0.3s ease-in-out;
+	}
+  
+	/* Ползунок для закрытия на мобильных */
+	.modal-mobile .handle {
+	  width: 40px;
+	  height: 6px;
+	  background-color: #ccc;
+	  border-radius: 3px;
+	  margin: 8px auto;
+	  cursor: grab;
+	}
+  }
+  

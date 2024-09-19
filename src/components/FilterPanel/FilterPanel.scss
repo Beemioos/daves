@@ -1,0 +1,79 @@
+.filter-panel {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 50;
+	overflow-y: auto;
+	background-color: #fff; /* Цвет фона фильтра */
+	transition: transform 0.3s ease-in-out;
+  
+	/* Стили для десктопа */
+	&.filter-desktop {
+	  width: 100%; /* Занимает всю ширину экрана */
+	  transform: translateX(100%); /* Исходная позиция справа */
+	}
+  
+	/* Стили для мобильных устройств */
+	&.filter-mobile {
+	  width: 100%;
+	  height: 100%;
+	  transform: translateY(100%); /* Исходная позиция снизу */
+	  border-top-left-radius: 16px;
+	  border-top-right-radius: 16px;
+	}
+  
+	/* Анимация появления */
+	&.filter-slide-enter {
+	  transform: translateX(100%); /* Начало анимации для десктопа */
+	}
+  
+	&.filter-slide-enter-active {
+	  transform: translateX(0); /* Появление для десктопа */
+	}
+  
+	&.filter-slide-exit {
+	  transform: translateX(0); /* Исходная позиция при закрытии */
+	}
+  
+	&.filter-slide-exit-active {
+	  transform: translateX(100%); /* Закрытие справа налево */
+	}
+  
+	/* Для мобильных устройств */
+	&.filter-mobile.filter-slide-enter {
+	  transform: translateY(100%); /* Начало анимации снизу */
+	}
+  
+	&.filter-mobile.filter-slide-enter-active {
+	  transform: translateY(0); /* Появление снизу */
+	}
+  
+	&.filter-mobile.filter-slide-exit {
+	  transform: translateY(0); /* Исходная позиция при закрытии */
+	}
+  
+	&.filter-mobile.filter-slide-exit-active {
+	  transform: translateY(100%); /* Закрытие вниз */
+	}
+  
+	.close-button {
+	  position: absolute;
+	  top: 10px;
+	  right: 10px;
+	  background: none;
+	  border: none;
+	  font-size: 24px;
+	  cursor: pointer;
+	}
+  
+	.filter-handle {
+	  width: 40px;
+	  height: 6px;
+	  background-color: #ccc;
+	  border-radius: 3px;
+	  margin: 8px auto;
+	}
+  }
+  

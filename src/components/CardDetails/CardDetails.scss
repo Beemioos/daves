@@ -1,0 +1,45 @@
+.card-main {
+	@apply p-16 flex justify-between;
+
+	.image_block {
+		@apply flex flex-col justify-between h-[85vh];
+		.cost {
+			@apply text-4xl font-bold;
+		}
+		.image {
+			@apply w-full max-w-xs h-auto aspect-square object-cover rounded-lg mb-4 mr-6;
+		  }
+		  
+	}
+	.right {
+		@apply h-96 flex flex-col ml-6 gap-3;
+		.seller_block {
+			@apply flex p-[2px] px-[4px] rounded-md bg-slate-400 w-min  items-center hover:opacity-80 cursor-pointer;
+		}
+		.login_ct {
+			@apply w-min text-xs hover:underline cursor-pointer;
+		}
+		.info_block{
+			@apply mt-16;
+		}
+	}
+}
+@media (max-width: 750px) {
+	.card-main {
+		@apply flex-1 flex-col overflow-y-auto p-4;
+		max-height: 85vh;
+		width: 100%;
+		box-sizing: border-box;
+		.right {
+			@apply h-96 flex flex-col ml-6 gap-0;
+			
+			.info_block{
+				@apply mt-16;
+			}
+		}
+	}
+	.cost{
+		@apply m-4
+	}
+	
+}

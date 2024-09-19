@@ -1,0 +1,41 @@
+// @media (max-width: 500px) {
+// 	.main1 {
+// 	  @apply flex-col items-center;
+// 	  padding: 0; /* Уменьшает отступы */
+// 	}
+
+// 	.filter-container {
+// 	  width: 100%; /* Фильтр растянется на всю ширину экрана */
+// 	  padding: 10px; /* Немного отступов для комфорта */
+// 	}
+
+// 	.order-list {
+// 	  width: 100%; /* Заказы также займут всю ширину экрана */
+// 	  padding: 10px; /* Отступы для симметрии с фильтром */
+// 	}
+//   }
+.main1 {
+	@apply p-[10px];
+}
+
+@media (max-width: 649px) {
+	.main1 {
+		@apply flex flex-col items-center justify-center p-[10px];
+	}
+	
+}
+
+@media (max-width: 439px) {
+	.main1 {
+		@apply flex flex-col items-center justify-center p-[10px];
+	}
+	ul{
+		@apply flex-col
+	}
+	.filltering{
+		@apply flex-col justify-center items-center flex
+	}
+	.filter-container{
+		@apply w-min
+	}
+}
