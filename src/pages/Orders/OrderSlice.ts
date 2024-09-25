@@ -18,7 +18,10 @@ const ordersSlice = createSlice({
 		},
 		updateOrderStatus(
 			state,
-			action: PayloadAction<{ id: string; status: string }>
+			action: PayloadAction<{
+				id: string
+				status: 'pending' | 'in-progress' | 'completed' | 'rejected' | undefined
+			}>
 		) {
 			const { id, status } = action.payload
 			const order = state.orders.find(order => order.id === id)

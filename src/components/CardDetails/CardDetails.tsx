@@ -28,7 +28,9 @@ const CardDetails: React.FC<Props> = ({ order, onUpdate }) => {
 	useEffect(() => {
 		if (order) {
 			setLocalOrder(order)
-			setQrPath(order.qrCodePath)
+			if (order.qrCodePath) {
+				setQrPath(order.qrCodePath)
+			}
 		}
 	}, [order])
 
@@ -51,9 +53,14 @@ const CardDetails: React.FC<Props> = ({ order, onUpdate }) => {
 	const handleStatusChange = async (status: string) => {
 		const orderId = localOrder.id
 		try {
-			const updatedOrder = await updateOrder({ id: orderId, status }).unwrap()
+			const updatedOrder = await updateOrder({
+				id: orderId,
+				status,
+			}).unwrap()
 			setLocalOrder(updatedOrder)
-			setQrPath(updatedOrder.qrCodePath)
+			if (updatedOrder.qrCodePath) {
+				setQrPath(updatedOrder.qrCodePath)
+			}
 			onUpdate(updatedOrder)
 		} catch (error) {
 			console.error('Ошибка при обновлении статуса:', error)
@@ -64,10 +71,9 @@ const CardDetails: React.FC<Props> = ({ order, onUpdate }) => {
 		<div className='card-main'>
 			<div className='image_block'>
 				{qrVisible && qrPath ? (
-					 <a href={`/guest/${localOrder.id}`} target='_blank'>
-					<img className='image' src={qrUrl} alt='QR Code' />
-
-				 </a>
+					<a href={`/guest/${localOrder.id}`} target='_blank'>
+						<img className='image' src={qrUrl} alt='QR Code' />
+					</a>
 				) : (
 					<img className='image' src={imageUrl} alt={localOrder.orderName} />
 				)}
@@ -142,11 +148,13 @@ const CardDetails: React.FC<Props> = ({ order, onUpdate }) => {
 									</MyButton>
 								</div>
 							)}
-							{['completed', 'rejected'].includes(localOrder.status) && (
-								<StatusValidator status={localOrder.status} />
+
+							{['completed', 'rejected'].includes(localOrder.status ?? '') && (
+								<StatusValidator status={localOrder.status as string} />
 							)}
 						</>
 					)}
+
 					{user?.role !== 'admin' && (
 						<>
 							<StatusValidator status={localOrder.status} />

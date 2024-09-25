@@ -21,7 +21,7 @@ export const orderApi = api.injectEndpoints({
 				method: 'GET',
 			}),
 		}),
-		updateOrderById: builder.mutation<IOrder, { id: string; status: string }>({
+		updateOrderById: builder.mutation<IOrder, { id: string | undefined; status: string }>({
 			query: ({ id, status }) => ({
 				url: `/orders/${id}`,
 				method: 'PUT',

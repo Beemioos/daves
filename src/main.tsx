@@ -8,7 +8,6 @@ import './index.css'
 import Admin from './pages/Admin/Admin.tsx'
 import Auth from './pages/Auth/Auth.tsx'
 import CreateOrder from './pages/CreateOrder/CreateOrder.tsx'
-import History from './pages/History/History.tsx'
 import Orders from './pages/Orders/Orders.tsx'
 import Profile from './pages/Profile/Profile.tsx'
 import ThemeProvider from './theme-privider/index.tsx'
@@ -38,10 +37,6 @@ const router = createBrowserRouter([
 			{
 				path: 'orders',
 				element: <Orders />,
-			},
-			{
-				path: 'history',
-				element: <History />,
 			},
 			{
 				path: 'profile',

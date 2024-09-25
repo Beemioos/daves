@@ -14,6 +14,6 @@ export interface IOrder {
 	dateDelivery: Date |string
 	cost: number
 	image: File
-	qrCodePath: File
+	qrCodePath?: File | string | null
 
 }

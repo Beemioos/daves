@@ -62,8 +62,7 @@ const CreateForm = () => {
 
   const [createError, setCreateError] = useState('')
   const navigate = useNavigate()
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [image, setImage] = useState<File | null>(null)
+  const [image,setImage] = useState<File | null>(null)
   const [preview, setPreview] = useState<string | null>(null)
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -108,7 +107,9 @@ const CreateForm = () => {
     try {
       console.log(data)
       const formData = new FormData()
-      formData.append('image', data.image)
+      if (image) {
+        formData.append('image', image) // Используем состояние image
+      }
       formData.append('orderName', data.orderName)
       formData.append('clientName', data.clientName)
       formData.append('address', data.address)
